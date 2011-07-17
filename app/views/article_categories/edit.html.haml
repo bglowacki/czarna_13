@@ -1,0 +1,19 @@
+=content_for :title do
+	Uaktualnij kategorię
+=content_for :content do
+	=form_for @article_category do |f|
+		=f.label :name, "Nazwa kategorii:"
+		%br
+		=f.text_field :name
+		%br
+
+	
+		=f.label :description, "Opis:"
+		%br
+		=f.text_area :description
+		%br
+	
+		=f.label :image, "Ikona kategorii:"
+		%br=f.text_field :image
+	
+		%br=f.submit "Uaktualnij"

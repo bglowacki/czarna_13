@@ -1,0 +1,24 @@
+=content_for :title do
+	Edytuj wydarzenie
+
+=content_for :content do
+	=form_for @calendar_event do |f|
+		%p
+			=f.label :title, "Tytuł:"
+			%br=f.text_field :title
+		
+		%p
+			=f.label :from, "Od:"
+			%br=f.datetime_select :from
+			
+		%p 
+			=f.label :to, "Do:"
+			%br=f.datetime_select :to
+			
+		%p
+			=f.label :note, "Notatka"
+			%br=f.text_area :note
+			
+		%p
+			=f.submit "Uaktualnij wydarzenie"
+		

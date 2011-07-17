@@ -1,0 +1,10 @@
+-if user_signed_in?
+	%p.right=link_to "Dodaj dział", new_article_category_path
+%ul
+	-@article_categories.each do |a|
+		%li=link_to a.name, a
+		-if user_signed_in?
+			%p.right
+				=link_to "Edytuj", edit_article_category_path(a)
+				|
+				=link_to "Usuń", article_category_path(a), :method => 'delete'

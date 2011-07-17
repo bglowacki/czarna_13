@@ -1,0 +1,9 @@
+=link_to "Dodaj nowy artykuł", new_article_path
+
+-@articles.each do |a|
+	%h2=a.title
+	%h3=a.body
+	%p=a.author
+	%p=a.article_sub_category.name
+
+	

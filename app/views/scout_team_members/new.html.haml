@@ -1,0 +1,33 @@
+=content_for :title do
+	Dołącz do drużyny
+	
+=content_for :content do
+	=form_for @scout_team_member do |f|
+		
+		=f.label :scout_team_id, "Drużyna:"
+		%br=f.collection_select(:scout_team_id, ScoutTeam.all, :id, :name)
+		
+		=f.label :first_name, "Imię:"
+		%br=f.text_field :first_name
+		
+		=f.label :nickname, "Ksywka:"
+		%br=f.text_field :nickname
+		
+		=f.label :last_name, "Nazwisko:"
+		%br=f.text_field :last_name
+		
+		=f.label :email, "Adres e-mail:"
+		%br=f.text_field :email
+		
+		=f.label :rank, "Stopień:"
+		%br=f.select :rank, %w[Młodzik Ochotniczka Wywiadowca Tropicielka Odkrywca Pionierka Ćwik Samarytanka HO HR], {:include_blank => true} 
+		
+		=f.label :instructor_rank, "Stopień instruktorski:"
+		%br=f.select :instructor_rank, %w[Przewodnik/Przewodniczka Podharcmistrz Harcmistrsz], {:include_blank => true}
+		
+		=f.label :photo, "Zdjęcie:"
+		%br=f.text_field :photo
+		
+		
+		%br=f.submit "Dołącz"
+		

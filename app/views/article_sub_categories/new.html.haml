@@ -1,0 +1,15 @@
+=content_for :title do
+	Dodaj nową podkategorię
+=content_for :content do
+	=form_for @article_sub_category do |f|
+
+		=f.label :article_category_id, "Kategoria:"
+		%br=f.collection_select(:article_category_id, ArticleCategory.all, :id, :name)
+	
+		%br=f.label :name, "Nazwa"
+		%br=f.text_field :name
+	
+		%br=f.label :body, "Opis"
+		%br=f.text_area :body
+	
+		%br=f.submit "Utwórz podkategorię"

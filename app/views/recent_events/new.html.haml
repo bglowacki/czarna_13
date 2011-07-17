@@ -1,0 +1,12 @@
+=content_for :title do
+	Dodaj newsa
+
+=content_for :content do
+	=form_for @recent_event do |f|
+		=f.label :title, "Tytuł:"
+		%br=f.text_field :title
+	
+		%br=f.label :description, "Treść newsa:"
+		%br=f.text_area :description
+	
+		%br=f.submit "Dodaj newsa!"

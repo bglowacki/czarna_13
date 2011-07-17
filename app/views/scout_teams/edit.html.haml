@@ -1,0 +1,21 @@
+=content_for :title do
+	Uaktualnij drużynę
+
+=content_for :content do
+	=form_for @scout_team do |f|
+		=f.label :name, "Nazwa drużyny:"
+		%br=f.text_field :name
+	
+		%br=f.label :team_leader, "Drużynowy:"
+		%br=f.text_field :team_leader
+	
+		%br=f.label :active, "Aktywna?"
+		%br=f.check_box :active 
+	
+		%br=f.label :body, "Opis lub historia drużyny:"
+		%br=f.text_area :body
+	
+		%br=f.label :photo, "Zdjęcie drużyny:"
+		%br=f.text_field :photo
+	
+		%br=f.submit "Uaktualnij drużynę!"

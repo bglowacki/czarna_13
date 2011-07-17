@@ -1,0 +1,12 @@
+=content_for :content do
+	=link_to "Dodaj nowego newsa", new_recent_event_path
+
+	-@recent_events.each do |r|
+		%h2=r.title
+		%p=r.description
+		.margin_bottom_20.horizontal_divider 
+		.margin_bottom_20
+			
+			
+			
+			

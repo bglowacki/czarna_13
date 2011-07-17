@@ -1,0 +1,11 @@
+=content_for :content do
+	%h2=@article.title
+	-if user_signed_in?
+		%p.right
+			=link_to "Edytuj", edit_article_path(@article)
+			|
+			=link_to "Usuń", article_path(@article), :method => 'delete'
+	
+	%p=@article.body
+	%b=@article.author
+	%p=@article.article_sub_category.name
