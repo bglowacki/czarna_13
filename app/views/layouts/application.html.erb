@@ -16,12 +16,13 @@
 	
 	<div id="templatemo_menu">
 		
-		<ul>
-			<%@scout_teams.each do |st|%>
-				<%if st.active == true%>
-					<li><%=link_to st.name, st%>
-				<%end%>
-			<%end%>     
+		<ul><%if @scout_teams.present?%>
+				<%@scout_teams.each do |st|%>
+					<%if st.active == true%>
+						<li><%=link_to st.name, st%>
+					<%end%>
+				<%end%>  
+			<%end%>   
         </ul>
     </div> <!-- end of menu -->
 
@@ -50,7 +51,9 @@
 			
 			
 			<div class="header_01">Wiedza</div>
-				<%=render :template => '/article_categories/index'%>
+				<%if @article_categories.present?%>
+					<%=render :template => '/article_categories/index'%>
+				<%end%>
 			
             <div class="margin_bottom_20 horizontal_divider"></div> 
 			<div class="margin_bottom_20"></div>
