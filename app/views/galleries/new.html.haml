@@ -1,0 +1,15 @@
+=content_for :title do
+	Nowa galeria
+	
+=content_for :content do
+	=form_for @gallery do |f|
+		%br= f.label :name, "Nazwa"
+		= f.text_field :name
+	
+		%br= f.label :description, "Opis"
+		= f.text_field :description
+	
+		%br= f.label :image, "Ikona galerii"
+		= f.text_field :image
+	
+		%br= f.submit "Utwórz", :disable_with => 'Tworzenie...'

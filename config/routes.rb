@@ -1,5 +1,9 @@
 Czarna13::Application.routes.draw do
   
+  resources :galleries do
+    resources :gallery_images
+  end
+
   resources :calendar_events
 
   resources :scout_team_members

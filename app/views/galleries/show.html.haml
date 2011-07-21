@@ -1,0 +1,14 @@
+=content_for :title do
+	=@gallery.name
+
+=content_for :content do
+	-if user_signed_in?
+		%p.right=link_to "Dodaj zdjęcie", new_gallery_gallery_image_path(@gallery)
+	-if @gallery.image.present?
+		=image_tag(@gallery.image)
+	%h4=@gallery.description
+	-@gallery.gallery_images.each do |gi|
+		.image_wrapper_01=image_tag(gi.image_url(:thumb).to_s)
+		=link_to "Usuń", [@gallery, gi], :method => 'delete'
+		
+	

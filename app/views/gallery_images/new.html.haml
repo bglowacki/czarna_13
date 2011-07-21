@@ -1,0 +1,11 @@
+=content_for :title do
+	Dodaj zdjęcie
+=content_for :content do
+	=form_for [@gallery, @gallery_image], :html => {:multipart => true} do |f|
+				
+		= f.label :gallery_id, "Galeria"
+		= f.collection_select :gallery_id, Gallery.all, :id, :name
+
+		= f.file_field :image
+		
+		= f.submit "Dodaj zdjęcie", :disable_with => 'Dodawanie zdjęcia...'
