@@ -1,8 +1,5 @@
 # -*- encoding : utf-8 -*-
 
-require "bundler/capistrano"
-
-
 set :application, "czarna_13"
 set :repository,  "git@github.com:Vangerdahast/czarna_13.git"
 
@@ -30,8 +27,8 @@ after "deploy:bundle_gems", "deploy:restart"
 
 namespace :deploy do
   task :bundle_gems do 
-   run "cd #{deploy_to}/current && bundle install"  
-end
+   run "cd #{deploy_to}/current && bundle install "  
+  end
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
