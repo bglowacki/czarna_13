@@ -1,3 +1,3 @@
 class ScoutTeamMember < ActiveRecord::Base
-  belongs_to :scout_team, :dependant => 'destroy'
+  belongs_to :scout_team
 end
