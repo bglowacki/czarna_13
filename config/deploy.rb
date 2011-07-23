@@ -1,4 +1,8 @@
 # -*- encoding : utf-8 -*-
+
+require "bundler/capistrano"
+
+
 set :application, "czarna_13"
 set :repository,  "git@github.com:Vangerdahast/czarna_13.git"
 
