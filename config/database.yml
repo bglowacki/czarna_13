@@ -20,7 +20,7 @@ production:
     #database: db/production.sqlite3
     #pool: 5
     #timeout: 5000
-  adapter: mysql2
+  adapter: mysql
   encoding: utf8
   database: my_5830
   username: my_5830a
