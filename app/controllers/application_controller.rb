@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
     @scout_teams = ScoutTeam.all
   end
   
-  #def load_article_categories
-  #  @article_categories = ArticleCategory.all
-  #end
+  def load_article_categories
+    @article_categories = ArticleCategory.all
+  end
   
   def load_article_sub_categories
     @article_sub_categories = ArticleSubCategory.all
