@@ -29,7 +29,7 @@ class ScoutTeamsController < ApplicationController
   
   def update
     @scout_team = ScoutTeam.find(params[:id])
-    if @scout_team.update_attributes(params[:@scout_team])
+    if @scout_team.update_attributes(params[:scout_team])
       redirect_to @scout_team
     else
       render "edit"
