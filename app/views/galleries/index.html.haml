@@ -10,5 +10,6 @@
 				%p=image_tag(g.image)
 			%h2=g.name
 			%p=g.description
-		%p.right=link_to "Usuń galerię", gallery_path(g), :method => "delete"
+		-if user_signed_in?
+			%p.right=link_to "Usuń galerię", gallery_path(g), :method => "delete"
 		
