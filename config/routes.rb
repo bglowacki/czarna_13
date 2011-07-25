@@ -5,12 +5,12 @@ Czarna13::Application.routes.draw do
   end
 
   resources :calendar_events
-
-  resources :scout_team_members
-
+  
   devise_for :users
 
-  resources :scout_teams
+  resources :scout_teams do
+    resources :scout_team_members
+  end
 
   resources :article_sub_categories
 

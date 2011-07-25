@@ -13,5 +13,5 @@
 		%p=link_to stm.first_name + " " + stm.last_name, stm
 		-if user_signed_in?
 			=link_to "Usuń osobę", scout_team_member_path(stm), :method => 'delete'
-	%p=link_to "Dołącz do drużyny", new_scout_team_member_path
+	%p=link_to "Dołącz do drużyny", new_scout_team_scout_team_member_path(@scout_team)
 		

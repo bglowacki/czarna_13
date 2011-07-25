@@ -2,7 +2,7 @@
 	Dołącz do drużyny
 	
 =content_for :content do
-	=form_for @scout_team_member do |f|
+	=form_for [@scout_team, @scout_team_member] do |f|
 		
 		=f.label :scout_team_id, "Drużyna:"
 		%br=f.collection_select(:scout_team_id, ScoutTeam.all, :id, :name)

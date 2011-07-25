@@ -3,11 +3,14 @@ class ScoutTeamMembersController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :destroy]
   
   def new
-    @scout_team_member = ScoutTeamMember.new
+    @scout_team = ScoutTeam.find(params[:scout_team_id])
+    @scout_team_member = @scout_team.scout_team_members.build
   end
   
   def create
-    @scout_team_member = ScoutTeamMember.new(params[:scout_team_member])
+    @scout_team = ScoutTeam.find(params[:scout_team_id])
+    @scout_team_member = @scout_team.scout_team_members.build(params[:scout_team_member])
+    
     if @scout_team_member.save
       redirect_to @scout_team_member
     else
