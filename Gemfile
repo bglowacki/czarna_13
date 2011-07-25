@@ -5,7 +5,7 @@ gem 'haml'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'mysql2', '<0.3'
+gem 'mysql2', '0.2.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
