@@ -23,6 +23,7 @@ class ImageUploader < CarrierWave::Uploader::Base
         FileUtils.rm_rf(File.join(cache_dir, @cache_id_was))
       end
     end
+    
    
   # storage :fog
 
