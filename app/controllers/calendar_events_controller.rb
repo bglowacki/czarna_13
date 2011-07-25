@@ -19,9 +19,9 @@ class CalendarEventsController < ApplicationController
     @calendar_event = CalendarEvent.find(params[:id])
   end
   
-  def create
+  def update
     @calendar_event = CalendarEvent.find(params[:id])
-    if @calendar_event.update_attributes(params[:@calendar_event])
+    if @calendar_event.update_attributes(params[:calendar_event])
       redirect_to :root
     else
       render "edit"

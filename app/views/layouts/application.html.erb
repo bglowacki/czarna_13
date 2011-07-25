@@ -54,8 +54,8 @@
 			<%if user_signed_in?%>
 				<p class=right> <%=link_to "Dodaj dział", new_article_category_path%>
 			<%end%>
-			<%@article_categories.each do |ac|%>
-				<li><%=link_to ac.name, ac%>
+			<%if @article_categories%>
+				<%=render :template => 'article_categories/index'%>
 			<%end%>
 								
             <div class="margin_bottom_20 horizontal_divider"></div> 

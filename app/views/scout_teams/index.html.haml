@@ -9,7 +9,7 @@
 		%p=truncate(st.body, :length => 50)
 		-if user_signed_in?
 			%p.right
-				=link_to "Edytuj", ediy_scout_team_path(st)
+				=link_to "Edytuj", edit_scout_team_path(st)
 				|
 				=link_to "Usuń drużynę", st, :method => 'delete'
 				
