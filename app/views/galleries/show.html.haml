@@ -7,8 +7,9 @@
 	-if @gallery.image.present?
 		=image_tag(@gallery.image)
 	%h4=@gallery.description
-	-@gallery.gallery_images.each do |gi|
-		.image_wrapper_01=image_tag(gi.image_url(:thumb).to_s)
+	-@gallery.gallery_images.each do |gi|	
+		.image_wrapper_01
+			=link_to image_tag(gi.image_url(:thumb).to_s), gallery_image_path(gi)
 		=link_to "Usuń", [@gallery, gi], :method => 'delete'
 		
 	

@@ -3,6 +3,9 @@ Czarna13::Application.routes.draw do
   resources :galleries do
     resources :gallery_images
   end
+  
+  resources :gallery_images
+  
 
   resources :calendar_events
   

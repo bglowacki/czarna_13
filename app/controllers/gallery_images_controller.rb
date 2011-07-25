@@ -24,4 +24,8 @@ class GalleryImagesController < ApplicationController
     redirect_to gallery_path(@gallery.gallery_id)
   end
   
+  def show
+    @gallery_image = GalleryImage.find(params[:id])
+  end
+  
 end
