@@ -27,7 +27,4 @@ class GalleriesController < ApplicationController
     redirect_to galleries_path
   end
   
-  def download
-    send_file @gallery_image.download.path, :type => 'image/jpg', :filename => @gallery_image.permalink
-  end  
 end
