@@ -47,6 +47,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql2 (0.2.11)
     orm_adapter (0.0.5)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -86,6 +87,7 @@ DEPENDENCIES
   carrierwave
   devise
   haml
+  mysql2 (< 0.3)
   rails (= 3.0.3)
   rmagick
   sqlite3-ruby

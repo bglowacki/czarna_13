@@ -51,10 +51,12 @@
 			
 			
 			<div class="header_01">Wiedza</div>
+			<%if user_signed_in?%>
+				<p class=right> <%=link_to "Dodaj dział", new_article_category_path%>
+			<%end%>
 				<%if @article_categories%>
-					<%=render :template => '/article_categories/index'%>
+					<%=render :template => '/article_categories/index'%>			
 				<%end%>
-			
             <div class="margin_bottom_20 horizontal_divider"></div> 
 			<div class="margin_bottom_20"></div>
 
