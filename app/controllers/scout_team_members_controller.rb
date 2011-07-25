@@ -36,5 +36,11 @@ class ScoutTeamMembersController < ApplicationController
     end
   end
   
+  def destroy
+    @scout_team_member = ScoutTeamMember.find(params[:id])
+    @scout_team_member.destroy
+    redirect_to scout_team_path(@scout_team_member.scout_team_id)
+  end
+  
   
 end
