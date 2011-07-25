@@ -16,14 +16,14 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
-  #adapter: mysql2
-  #encoding: utf8
-  #database: my_5830
-  #username: my_5830a
-  #password: Bart1398#
-  #host: sql.verbum-rails.megiteam.pl
-  #port: 3307
+  #adapter: sqlite3
+  #database: db/production.sqlite3
+  #pool: 5
+  #timeout: 5000
+  adapter: mysql2
+  encoding: utf8
+  database: my_5830
+  username: my_5830a
+  password: Bart1398#
+  host: sql.verbum-rails.megiteam.pl
+  port: 3307
