@@ -12,7 +12,7 @@ class ScoutTeamMembersController < ApplicationController
     @scout_team_member = @scout_team.scout_team_members.build(params[:scout_team_member])
     
     if @scout_team_member.save
-      redirect_to @scout_team_member
+      redirect_to scout_team_member_path(@scout_team_member)
     else
       render "new"
     end

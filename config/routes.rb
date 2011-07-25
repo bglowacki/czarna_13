@@ -13,6 +13,9 @@ Czarna13::Application.routes.draw do
   end
 
   resources :article_sub_categories
+  
+  resources :scout_team_members
+  
 
   resources :recent_events
 
