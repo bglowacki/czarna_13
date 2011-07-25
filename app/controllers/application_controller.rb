@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :load_article_sub_categories, :load_scout_teams, :calendar_events_list
+  #before_filter :load_article_sub_categories, :load_scout_teams, :calendar_events_list
   
   
   def load_scout_teams
