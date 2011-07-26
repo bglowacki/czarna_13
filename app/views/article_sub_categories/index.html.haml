@@ -1,3 +1,4 @@
 -@article_sub_categories.each do |as|
 	%h2=as.name
 	%p=as.body
+	%p.right=link_to "Dodaj nowy artykuł", article_sub_category_article_path(@article_sub_category)

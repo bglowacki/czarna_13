@@ -4,26 +4,30 @@ Czarna13::Application.routes.draw do
     resources :gallery_images
   end
   
+  resources :article_sub_categories do
+     resources :articles
+  end
+  
+  resources :scout_teams do
+    resources :scout_team_members
+  end
+   
+  resources :article_categories do
+    resources :article_sub_categories
+  end
+  
   resources :gallery_images
 
   resources :calendar_events
   
   devise_for :users
-
-  resources :scout_teams do
-    resources :scout_team_members
-  end
-
-  resources :article_sub_categories
   
   resources :scout_team_members
-  
 
   resources :recent_events
 
   resources :articles
 
-  resources :article_categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

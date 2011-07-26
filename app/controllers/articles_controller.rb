@@ -13,7 +13,19 @@ class ArticlesController < ApplicationController
   end
   
   def new
-    @article = Article.new
+    @article_sub_category = ArticleSubCategory.find(params[:article_sub_category_id])
+    @article = @article_sub_category.articles.build
+  end
+  
+  def create
+    @article_sub_category = ArticleSubCategory.find(params[:article_sub_category_id])
+    @article = @article_sub_category.articles.build(params[:article])
+    if @article.save
+      redirect_to @article
+    else
+      render "new"
+    end
+    
   end
   
   def edit
@@ -29,18 +41,8 @@ class ArticlesController < ApplicationController
     end
   end
   
-  def create
-    @article = Article.new(params[:article])
-    if @article.save
-      redirect_to @article
-    else
-      render "new"
-    end
-    
-  end
-  
   def destroy
-    Article.find(params["id"]).destroy
-    redirect_to articles_path
+    @article = Article.find(params["id"]).destroy
+    redirect_to article_category_path(@article.article_sub_category.article_category_id)
   end
 end

@@ -29,7 +29,7 @@ class ArticleCategoriesController < ApplicationController
   def create
     @article_category = ArticleCategory.new(params[:article_category])
     if @article_category.save
-      redirect_to article_categories_path
+      redirect_to article_category_path(@article_category)
     else
       render "new"
     end

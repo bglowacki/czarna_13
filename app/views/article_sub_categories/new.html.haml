@@ -1,7 +1,7 @@
 =content_for :title do
 	Dodaj nową podkategorię
 =content_for :content do
-	=form_for @article_sub_category do |f|
+	=form_for [@article_category, @article_sub_category] do |f|
 
 		=f.label :article_category_id, "Kategoria:"
 		%br=f.collection_select(:article_category_id, ArticleCategory.all, :id, :name)

@@ -11,13 +11,15 @@ class ArticleSubCategoriesController < ApplicationController
   end
   
   def new
-    @article_sub_category = ArticleSubCategory.new
+    @article_category = ArticleCategory.find(params[:article_category_id])
+    @article_sub_category = @article_category.article_sub_categories.build
   end
   
   def create
-    @article_sub_category = ArticleSubCategory.new(params[:article_sub_category])
+    @article_category = ArticleCategory.find(params[:article_category_id])
+    @article_sub_category = @article_category.article_sub_categories.build(params[:article_sub_category])
     if @article_sub_category.save
-      redirect_to :root
+      redirect_to article_category_path(@article_sub_category.article_category_id)
     end
   end
 end

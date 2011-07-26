@@ -2,7 +2,7 @@
 	Dodaj artykuł
 
 =content_for :content do
-	=form_for @article do |f|
+	=form_for [@article_sub_category, @article] do |f|
 		=f.label :title, "Tytuł:"
 		%br=f.text_field :title
 	
@@ -13,7 +13,7 @@
 		%br=f.text_field :author
 	
 		%br=f.label :article_sub_category_id, "Podkategoria"
-		%br=f.collection_select(:article_sub_category_id, ArticleSubCategory.all, :id, :name)
+		%br=f.collection_select(:article_sub_category_id, ArticleSubCategory.all,:id, :name)
 		
 		%br=f.submit "Dodaj artykuł"
 	
