@@ -24,6 +24,7 @@ class ImageUploader < CarrierWave::Uploader::Base
       end
     end
    
+   
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
