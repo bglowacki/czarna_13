@@ -24,6 +24,7 @@ role :db,  "verbum-rails.megiteam.pl", :primary => true # This is where Rails mi
 
 after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems", "deploy:restart"
+after "depoy:update_code", "customs:symlink"
 
 namespace :deploy do
   task :bundle_gems do 
@@ -31,17 +32,23 @@ namespace :deploy do
   end
   task :start do ; end
   task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  #task :restart, :roles => :app, :except => { :no_release => true } do
+  #  run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  #end
+  
+  task :restart, :roles => :app do
+    run "restart-app #{ application }"
+  end  
+end
+
+namespace :customs do  
+  task :symlink, :roles => :app do
+    run <<-CMD
+      ln -nfs #{shared_path}/system/uploads #{release_path}/public/uploads
+    CMD
   end
 end
+    
 
 #after "deploy", "deploy:bundle_gems"
 #after "deploy:bundle_gems", "deploy:restart"
-
-#namespace :deploy do
-#  desc "Restart aplikacji przy pomocy skryptu Megiteam"
-#  task :restart, :role => :app do
-#    run "restart-app #{ application }"
-#  end
-#end
