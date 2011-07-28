@@ -24,7 +24,7 @@ role :db,  "verbum-rails.megiteam.pl", :primary => true # This is where Rails mi
 
 after "deploy", "deploy:bundle_gems"
 after "deploy:bundle_gems", "deploy:restart"
-after "depoy:update_code", "customs:symlink"
+after "deploy:restart", "customs:symlink"
 
 namespace :deploy do
   task :bundle_gems do 
