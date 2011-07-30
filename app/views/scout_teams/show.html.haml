@@ -3,7 +3,8 @@
 =content_for :content do
 	-if @scout_team.photo.present?
 		.image_wrapper_01=image_tag(@scout_team.photo)
-	%p=@scout_team.team_leader
+	%h3="Drużynowy: #{@scout_team.team_leader}"
+	%h4="Przyboczny/Przyboczni: #{@scout_team.sidekick}"
 	%p=@scout_team.body
 	%p=@scout_team.active
 	
