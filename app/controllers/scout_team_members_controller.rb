@@ -1,6 +1,6 @@
 class ScoutTeamMembersController < ApplicationController
   
-  before_filter :authenticate_user!, :only => [:new, :edit, :destroy]
+  before_filter :authenticate_user!, :only => [:edit, :destroy]
   
   def new
     @scout_team = ScoutTeam.find(params[:scout_team_id])
