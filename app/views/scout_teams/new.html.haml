@@ -7,7 +7,7 @@
 		%br=f.text_field :name
 		
 		=f.label :came_into_being, "Powstała w:"
-		%br=f.date_select :came_into_being
+		%br=f.date_select :came_into_being, :use_month_numbers => true, :start_year => 1981, :end_year => Time.now.year
 	
 		=f.label :team_leader, "Drużynowy:"
 		%br=f.text_field :team_leader
