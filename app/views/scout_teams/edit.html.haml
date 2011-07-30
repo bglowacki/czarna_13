@@ -5,6 +5,9 @@
 	=form_for @scout_team do |f|
 		=f.label :name, "Nazwa drużyny:"
 		%br=f.text_field :name
+		
+		=f.label :came_into_being, "Powstała w:"
+		%br=f.date_select :came_into_being
 	
 		%br=f.label :team_leader, "Drużynowy:"
 		%br=f.text_field :team_leader

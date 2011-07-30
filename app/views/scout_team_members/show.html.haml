@@ -2,7 +2,10 @@
 	=@scout_team_member.first_name + " " + @scout_team_member.last_name
 
 =content_for :content do
-	=@scout_team_member.nickname
+	=link_to "Powrót do drużyny #{@scout_team_member.scout_team.name}", scout_team_path(@scout_team_member.scout_team_id)
+	%br
+	%br
+	%p=@scout_team_member.nickname
 	-if @scout_team_member.photo.present?
 		.image_wrapper_01=image_tag(@scout_team_member.photo)
 	=@scout_team_member.scout_team.name

@@ -3,7 +3,7 @@ class ScoutTeamsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :destroy]
   
   def index
-    @scout_teams = ScoutTeam.all
+    @scout_teams = ScoutTeam.order("came_into_being DESC")
   end
   
   def show

@@ -5,7 +5,11 @@
 		%p.right
 			=link_to "Dodaj drużynę", new_scout_team_path
 	-@scout_teams.each do |st|
-		%h3=link_to st.name, st
+		%h3
+			=link_to st.name, st
+		="Dołączyło już: #{st.scout_team_members.count}"
+		%br
+		%br
 		%p=truncate(st.body, :length => 50)
 		-if user_signed_in?
 			%p.right
