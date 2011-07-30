@@ -3,7 +3,7 @@
 		.image_wrapper_01=image_tag(@article_category.image)
 	=@article_category.name
 =content_for :content do
-	%h3=@article_category.description
+	%h5=@article_category.description
 	-if user_signed_in?
 		%p.right
 			=link_to "Dodaj kategorię", new_article_category_article_sub_category_path(@article_category)

@@ -1,6 +1,9 @@
 =content_for :title do
+
 	Dodaj zdjęcie
+	
 =content_for :content do
+
 	=form_for [@gallery, @gallery_image], :html => {:multipart => true} do |f|
 				
 		= f.label :gallery_id, "Galeria"
