@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730225833) do
+ActiveRecord::Schema.define(:version => 20110730230806) do
 
   create_table "article_categories", :force => true do |t|
     t.string   "name"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(:version => 20110730225833) do
 
   create_table "scout_teams", :force => true do |t|
     t.string   "name"
-    t.string   "body"
+    t.text     "body",            :limit => 255
     t.string   "photo"
     t.string   "team_leader"
     t.boolean  "active"
