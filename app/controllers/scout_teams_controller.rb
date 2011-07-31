@@ -1,6 +1,6 @@
 class ScoutTeamsController < ApplicationController
   
-  before_filter :authenticate_user!, :only => [:new, :edit, :destroy]
+  before_filter :authenticate_admin!, :only => [:new, :edit, :destroy]
   
   def index
     @scout_teams = ScoutTeam.order("came_into_being DESC")

@@ -1,5 +1,7 @@
 class GalleriesController < ApplicationController
   
+  before_filter :authenticate_admin!, :only => [:new, :destroy]
+  
   def show
     @gallery = Gallery.find(params[:id])    
   end

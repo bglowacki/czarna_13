@@ -2,7 +2,7 @@
 	Lista galerii
 	
 =content_for :content do
-	-if user_signed_in?
+	-if admin_signed_in?
 		%p.right=link_to "Dodaj galerię", new_gallery_path
 	-@galleries.each do |g|
 		=link_to gallery_path(g) do
@@ -10,6 +10,6 @@
 				%p=image_tag(g.image)
 			%h2=g.name
 			%p=g.description
-		-if user_signed_in?
+		-if admin_signed_in?
 			%p.right=link_to "Usuń galerię", gallery_path(g), :method => "delete"
 		

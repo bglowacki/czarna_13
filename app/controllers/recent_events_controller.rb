@@ -1,6 +1,6 @@
 class RecentEventsController < ApplicationController
   
-  before_filter :authenticate_user!, :only => [:new, :edit, :destroy]
+  before_filter :authenticate_admin!, :only => [:new, :edit, :destroy]
     
   def index
     @recent_events = RecentEvent.all

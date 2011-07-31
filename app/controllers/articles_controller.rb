@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :load_article_categories
-  before_filter :authenticate_user!, :only => [:new, :edit, :destroy]
+  before_filter :authenticate_admin!, :only => [:new, :edit, :destroy]
   
   
   def index

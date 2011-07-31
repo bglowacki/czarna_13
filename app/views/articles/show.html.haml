@@ -1,6 +1,6 @@
 =content_for :content do
 	%h2=@article.title
-	-if user_signed_in?
+	-if admin_signed_in?
 		%p.right
 			=link_to "Edytuj", edit_article_path(@article)
 			|

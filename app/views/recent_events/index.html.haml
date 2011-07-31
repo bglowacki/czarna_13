@@ -1,5 +1,5 @@
 =content_for :content do
-	-if user_signed_in?
+	-if admin_signed_in?
 		=link_to "Dodaj nowego newsa", new_recent_event_path
 	-if @recent_events
 		-@recent_events.each do |r|

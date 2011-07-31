@@ -1,5 +1,9 @@
 Czarna13::Application.routes.draw do
   
+  devise_for :admins
+  
+  devise_for :users
+
   resources :galleries do
     resources :gallery_images
   end
@@ -19,8 +23,6 @@ Czarna13::Application.routes.draw do
   resources :gallery_images
 
   resources :calendar_events
-  
-  devise_for :users
   
   resources :scout_team_members
 

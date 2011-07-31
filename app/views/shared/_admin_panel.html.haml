@@ -1,4 +1,9 @@
-|
-=link_to "Nowa podkategoria artykułów", new_article_sub_category_path
-|
-=link_to "Dodaj artykuł", new_article_path
+-if admin_signed_in?
+	Witaj 
+	=current_admin.first_name + " " + current_admin.last_name
+	%br
+	=link_to "Wyloguj", destroy_admin_session_path, :method => 'delete' 
+	|
+	=link_to 'Edytuj konto', edit_admin_registration_path
+-else
+	=link_to 'Zaloguj jako administrator', new_admin_session_path

@@ -1,7 +1,7 @@
 =content_for :title do
 	Drużyny
 =content_for :content do
-	-if user_signed_in?
+	-if admin_signed_in?
 		%p.right
 			=link_to "Dodaj drużynę", new_scout_team_path
 	-@scout_teams.each do |st|
@@ -11,7 +11,7 @@
 		%br
 		%br
 		%p=truncate(st.body, :length => 50)
-		-if user_signed_in?
+		-if admin_signed_in?
 			%p.right
 				=link_to "Edytuj", edit_scout_team_path(st)
 				|
