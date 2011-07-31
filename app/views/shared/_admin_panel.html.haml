@@ -4,6 +4,18 @@
 	%br
 	=link_to "Wyloguj", destroy_admin_session_path, :method => 'delete' 
 	|
-	=link_to 'Edytuj konto', edit_admin_registration_path
+	=#link_to 'Edytuj konto', edit_admin_registration_path
+-elsif user_signed_in?
+	Witaj 
+	=current_user.first_name + " " + current_user.last_name
+	%br
+	=link_to "Wyloguj", destroy_user_session_path, :method => 'delete' 
+	|
+	=#link_to 'Edytuj konto', edit_user_registration_path
 -else
+
+	=link_to "Zaloguj", new_user_session_path
+	lub
+	=link_to "zarejestruj", new_user_registration_path
+	|
 	=link_to 'Zaloguj jako administrator', new_admin_session_path
