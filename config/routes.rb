@@ -1,5 +1,7 @@
 Czarna13::Application.routes.draw do
   
+  resources :ideas
+
   devise_for :admins
   
   devise_for :users

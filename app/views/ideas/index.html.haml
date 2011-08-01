@@ -1,0 +1,13 @@
+=content_for :title do
+	Pomysły
+=content_for :content do
+
+	%p Tutaj dodawajcie wszelkie raporty o tym co nie działa lub pomysły co chcielbyście dodać do strony.
+	
+	%p.right=link_to "Dodaj nowy pomysł", new_idea_path
+
+	-@ideas.each do |i|
+		%h4=i.title
+		%p=i.description
+		%p=i.added_by
+		%p=link_to "Usuń", idea_path(i), :method => 'delete'

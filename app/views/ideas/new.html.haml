@@ -1,0 +1,15 @@
+=content_for :title do
+	Nowy pomysł
+=content_for :content do
+	=form_for @idea do |f|
+		=f.label :title, "Tytuł:"
+		%br= f.text_field :title
+		
+		= f.label :description, "Opis:"
+		%br= f.text_area :description
+		
+		= f.label :added_by, "Dodane przez:"
+		%br= f.text_field :added_by
+		
+		= f.submit "Prześlij", :disable_with => 'Przesyłanie...'
+		
