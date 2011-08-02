@@ -6,6 +6,6 @@
 			|
 			=link_to "Usuń", article_path(@article), :method => 'delete'
 	%p=link_to "Powrót do działu #{@article.article_sub_category.article_category.name}", article_category_path(@article.article_sub_category.article_category_id)
-	%p=@article.body
+	%p=raw(@article.body)
 	%br
 	%b=@article.author
