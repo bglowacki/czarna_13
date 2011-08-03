@@ -10,7 +10,7 @@ class GalleryImagesController < ApplicationController
   
   def create
      @gallery = Gallery.find(params[:gallery_id])
-     @gallery_image = @gallery.gallery_images.build(params[:gallery_image])
+     @gallery_image = @gallery.gallery_images.build(params[:file])
      if @gallery_image.save
        redirect_to gallery_path(@gallery)
      else
