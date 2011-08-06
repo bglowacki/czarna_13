@@ -22,9 +22,9 @@
 				%p.right=link_to "czytaj więcej", a
 				-if admin_signed_in?
 					%p.right
-						=link_to "Edytuj", edit_article_path(a)
+						=link_to "Edytuj", edit_article_sub_category_article_path(a)
 						|
-						=link_to "Usuń", article_path(a), :method => 'delete'
+						=link_to "Usuń", article_sub_category_article_path(a), :method => 'delete'
 			
 			.margin_bottom_20.horizontal_divider 
 			.margin_bottom_20.horizontal_divider 
