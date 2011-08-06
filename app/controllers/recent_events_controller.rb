@@ -6,6 +6,10 @@ class RecentEventsController < ApplicationController
     @recent_events = RecentEvent.order("id DESC")
   end
   
+  def show
+    @recent_event = RecentEvent.find(params[:id])
+  end
+  
   def new
     @recent_event = RecentEvent.new
     @recent_event.admin_name = current_admin.first_name + " " + current_admin.last_name
