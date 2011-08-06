@@ -5,7 +5,7 @@
 		.image_wrapper_01=image_tag(@scout_team.photo)
 	%h3="Drużynowy: #{@scout_team.team_leader}"
 	%h4="Przyboczny/Przyboczni: #{@scout_team.sidekick}"
-	%p=@scout_team.body
+	%p=raw(@scout_team.body)
 	%p=@scout_team.active
 	
 	%h3 

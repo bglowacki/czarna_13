@@ -2,4 +2,5 @@
 	=@recent_event.title
 =content_for :content do
 	%p.right=link_to "Powrót do strony głównej", root_path
+	%br
 	%p=raw(@recent_event.description)

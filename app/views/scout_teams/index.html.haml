@@ -10,7 +10,7 @@
 		="Dołączyło już: #{st.scout_team_members.count}"
 		%br
 		%br
-		%p=truncate(st.body, :length => 50)
+		%p=raw(truncate(st.body, :length => 100))
 		-if admin_signed_in?
 			%p.right
 				=link_to "Edytuj", edit_scout_team_path(st)
