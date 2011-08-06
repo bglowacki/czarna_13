@@ -29,14 +29,11 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    @article_sub_category = ArticleSubCategory.find(params[:article_sub_category_id])
-    @article = @article_sub_category.articles.find(params[:id])
+    @article = Article.find(params[:id])
   end
   
   def update
-    @article_sub_category = ArticleSubCategory.find(params[:article_sub_category_id])
-    @article = @article_sub_category.articles.build(params[:article])
-    
+    @article = Article.find(params[:id])    
     if @article.update_attributes(params[:article])
       redirect_to @article
     else
