@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     @article_sub_category = ArticleSubCategory.find(params[:article_sub_category_id])    
     @article = @article_sub_category.articles.find(params[:id])
     if @article.update_attributes(params[:article])
-      redirect_to @article
+      redirect_to article_category_path(@article_sub_category.article_category_id)
     else
       render "edit"
     end
