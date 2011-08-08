@@ -18,7 +18,7 @@
 				.margin_bottom_20
 				
 				%b=a.title
-				%p=raw(truncate(a.body, :length => 50, :ommision => '...' ))
+				%p=raw(truncate(a.body, :length => 200, :ommision => '...' ))
 				%p.right=link_to "czytaj więcej", a
 				-if admin_signed_in?
 					%p.right
