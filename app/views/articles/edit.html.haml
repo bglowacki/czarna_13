@@ -2,7 +2,7 @@
 	Edytuj artykuł
 
 =content_for :content do
-	=form_for [@articl_sub_category, @article] do |f|
+	=form_for [@article_sub_category, @article] do |f|
 		=f.label :title, "Tytuł:"
 		%br=f.text_field :title
 	
