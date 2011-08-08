@@ -22,7 +22,7 @@
 				%p.right=link_to "czytaj więcej", a
 				-if admin_signed_in?
 					%p.right
-						=link_to "Edytuj", edit_article_sub_category_article_path(a)
+						=link_to "Edytuj", edit_article_sub_category_article_path(@article_sub_category, a)
 						|
 						=link_to "Usuń", article_sub_category_article_path(a), :method => 'delete'
 			
