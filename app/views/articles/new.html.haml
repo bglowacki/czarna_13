@@ -3,6 +3,12 @@
 
 =content_for :content do
 	=form_for [@article_sub_category, @article] do |f|
+		-if @article.errors.any?
+			%div#errorExaplanation
+				%h2="#{pluralize(@article.errors.count, "błąd", "błędy")} nie pozwolił na zapisanie artykułu:"
+				%ul
+					-@article.errors.full_messages.each do |msg|
+						%li=msg
 		=f.label :title, "Tytuł:"
 		%br=f.text_field :title
 	

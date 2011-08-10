@@ -109,8 +109,29 @@
             
             
         </div> <!-- end of content -->
+
+
+
         
         <div class="templatemo_side_bar">
+	
+       		
+            <div class="header_01">Zbiórki:</div>
+			<%@scout_teams.each do |st|%>
+				<%if st.active == true%>
+					<h3><%=st.name%></h3>
+					<p>Dzień: <b><%=st.meeting_day%></b></p>
+					<%if st.meeting_time.present?%>
+						<p>Godzina: <b><%=st.meeting_time.to_formatted_s(:time_only)%></b></p>
+					<%end%>
+				<%end%>
+			<%end%>
+			
+			
+            
+       <div class="margin_bottom_10"></div>
+		
+		
 			<p class="right">
 			<%if admin_signed_in?%>
 				<%=link_to "Nowe wydarzenie", new_calendar_event_path%>
@@ -137,7 +158,7 @@
 <%= yield %>
 
 <div id="templatemo_footer">
-        Copyright © 2011 <a href="www.czarna-13.org">Czarna Trzynastka</a><br />		
+        Copyright © 2011 <%=url_for("http://www.czarna-13.org")%>		
    	</div> <!-- end of footer -->
     <div class="margin_bottom_10"></div>
     

@@ -6,14 +6,21 @@
 		=f.label :name, "Nazwa drużyny:"
 		%br=f.text_field :name
 		
-		=f.label :came_into_being, "Powstała w:"
-		%br=f.date_select :came_into_being
-	
-		%br=f.label :team_leader, "Drużynowy:"
-		%br=f.text_field :team_leader
+		=f.label :meeting_day, "Zbiórki odbywaja się w:"
+		%br=f.select :meeting_day, %w[Poniedziałek Wtorek Środa Czwartek Piątek Sobotę Niedzielę], {:include_blank => true}
 		
-		=f.label :sidekick, "Przyboczny/Przyboczni"
-		%br=f.text_field :sidekick
+		=f.label :meeting_time, "o godzinie:"
+		%br=f.time_select :meeting_time
+		
+		%br=f.label :came_into_being, "Powstała w:"
+		=f.date_select :came_into_being, :use_month_numbers => "true", :start_year => 1981, :end_year => Time.now.year
+	
+		%br
+		%br=f.label :team_leader, "Drużynowy:"
+		=f.text_field :team_leader
+		
+		%br=f.label :sidekick, "Przyboczny/Przyboczni"
+		=f.text_field :sidekick
 	
 		%br=f.label :active, "Aktywna?"
 		%br=f.check_box :active 
