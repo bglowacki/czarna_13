@@ -10,7 +10,7 @@
 					=r.admin_name
 			%br
 			%p=raw(truncate(r.description, :length => 200))
-			%p=link_to "...pokaż całego newsa", recent_event_path(r)
+			%p.right=link_to "...pokaż całego newsa", recent_event_path(r)
 			
 			.margin_bottom_20.horizontal_divider 
 			.margin_bottom_20
