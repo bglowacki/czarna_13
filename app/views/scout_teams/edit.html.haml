@@ -7,7 +7,7 @@
 		%br=f.text_field :name
 		
 		=f.label :meeting_day, "Zbiórki odbywaja się w:"
-		%br=f.select :meeting_day, %w[Poniedziałek Wtorek Środa Czwartek Piątek Sobotę Niedzielę], {:include_blank => true}
+		%br=f.select :meeting_day, %w[Poniedziałek Wtorek Środa Czwartek Piątek Sobota Niedziela], {:include_blank => true}
 		
 		=f.label :meeting_time, "o godzinie:"
 		%br=f.time_select :meeting_time
