@@ -4,13 +4,13 @@
 	-if @recent_events
 		-@recent_events.each do |r|
 			%h2=r.title
-			%p=raw(truncate(r.description, :length => 200))
-			%p=link_to "...pokaż całego newsa", recent_event_path(r)
 			-if r.admin_name.present?
 				%p.right
 					="Autor: "
-					%br
 					=r.admin_name
+			%p=raw(truncate(r.description, :length => 200))
+			%p=link_to "...pokaż całego newsa", recent_event_path(r)
+			
 			.margin_bottom_20.horizontal_divider 
 			.margin_bottom_20
 			
