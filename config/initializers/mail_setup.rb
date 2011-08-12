@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   #:domain => 'www.czarna-13.org',
   :user_name => 'marathone@gmail.com',
-  :password => 'Bart1398#',
+  :password => 'Bartolomeo1398#',
   :authentication => 'plain',
   :enable_starttls_auto => true,
 }
