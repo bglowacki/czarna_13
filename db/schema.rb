@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20110810100931) do
     t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "admins", ["authentication_token"], :name => "index_admins_on_authentication_token", :unique => true
