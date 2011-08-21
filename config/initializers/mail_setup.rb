@@ -3,10 +3,10 @@ ActionMailer::Base.delivery_method = :smtp
 
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
-  :port => 587,
+  :port => 25,
   :domain => 'czarna-13.org',
-  :user_name => 'bglowacki@czarna-13.org',
-  :password => 'Bart1398#',
+  :user_name => 'czarna.trzynastka@czarna-13.org',
+  :password => 'czarna1398',
   :authentication => :plain,
-  :enable_starttls_auto => false
+  :enable_starttls_auto => true
 }
