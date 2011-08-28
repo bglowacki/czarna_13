@@ -6,6 +6,7 @@
 	%h3="Drużynowy: #{@scout_team.team_leader}"
 	%h4="Przyboczny/Przyboczni: #{@scout_team.sidekick}"
 	%p=raw(@scout_team.body)
+	%br
 	%p
 		-if @scout_team.active == false
 			Niestety już nie działa
