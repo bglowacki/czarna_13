@@ -2,7 +2,7 @@
 	Nowa galeria
 	
 =content_for :content do
-	=form_for @gallery do |f|
+	=form_for @gallery, :html => {:multipart => true}do |f|
 		%br= f.label :name, "Nazwa"
 		= f.text_field :name
 	
@@ -13,6 +13,6 @@
 		= f.text_field :picassa_address
 	
 		%br= f.label :image, "Ikona galerii"
-		= f.text_field :image
+		= f.file_field :image
 	
 		%br= f.submit "Utwórz", :disable_with => 'Tworzenie...'

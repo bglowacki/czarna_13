@@ -5,7 +5,7 @@
 	-if admin_signed_in?
 		%p.right=link_to "Dodaj zdjęcie", new_gallery_gallery_image_path(@gallery)
 	-if @gallery.image.present?
-		=image_tag(@gallery.image)
+		=image_tag(@gallery.image_url(:thumb).to_s)
 	%h4=@gallery.description
 	-if @gallery.picassa_address.present?
 		%p=sanitize("Więcej zdjęć pod adresem #{link_to "Galeria " + @gallery.name, url_for(@gallery.picassa_address)}")

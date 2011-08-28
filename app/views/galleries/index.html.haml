@@ -6,8 +6,8 @@
 		%p.right=link_to "Dodaj galerię", new_gallery_path
 	-@galleries.each do |g|
 		=link_to gallery_path(g) do
-			-if g.image.present?
-				%p=image_tag(g.image)
+			-#if g.image.present?
+			%p=image_tag(g.image_url(:thumb).to_s)
 			%h2=g.name
 			%p=g.description
 		-if admin_signed_in?
