@@ -6,7 +6,11 @@
 	%h3="Drużynowy: #{@scout_team.team_leader}"
 	%h4="Przyboczny/Przyboczni: #{@scout_team.sidekick}"
 	%p=raw(@scout_team.body)
-	%p=@scout_team.active
+	%p
+		-if @scout_team.active == false
+			Niestety już nie działa
+		-else
+			Aktywnie działa
 	
 	%h3 
 		="Członkowie: (#{@scout_team.scout_team_members.count})"
