@@ -62,7 +62,7 @@
                 	<li><%=link_to "Drużyny", scout_teams_path%></li>
 					<li><%=link_to "Galerie", galleries_path%>
 					<%if admin_signed_in?%>
-						<li><%=link_to "Pomysły", ideas_path%>
+						<li><%=link_to "Pomysły (#{@ideas.count})", ideas_path%>
 					<%end%>
                 </ul>
 			

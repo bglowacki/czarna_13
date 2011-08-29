@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :load_article_sub_categories, :load_scout_teams, :calendar_events_list, :load_article_categories
+  before_filter :load_article_sub_categories, :load_scout_teams, :calendar_events_list, :load_article_categories, :load_ideas
   
   
   def load_scout_teams
@@ -18,5 +18,9 @@ class ApplicationController < ActionController::Base
   
   def calendar_events_list
     @all_calendar_events = CalendarEvent.all(:limit => 3, :order => "id DESC")
+  end
+  
+  def load_ideas
+    @ideas = Idea.all
   end
 end
