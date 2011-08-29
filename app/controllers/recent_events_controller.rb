@@ -3,7 +3,7 @@ class RecentEventsController < ApplicationController
   before_filter :authenticate_admin!, :only => [:new, :edit, :destroy]
     
   def index
-    @recent_events = RecentEvent.order("id DESC")
+    @recent_events = RecentEvent.all(:limit => 10, :order => "id DESC")
   end
   
   def show
