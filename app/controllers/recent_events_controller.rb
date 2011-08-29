@@ -11,14 +11,13 @@ class RecentEventsController < ApplicationController
   end
   
   def new
-    @recent_event = RecentEvent.new
-    @recent_event.admin_name = current_admin.first_name + " " + current_admin.last_name
+    @admin = current_admin
+    @recent_event = @admin.recent_events.build
   end
   
   def create
-    @admin = current_admin.id
-    @recent_event = RecentEvent.new(params[:recent_event])
-    @recent_event.admin_name = current_admin.first_name + " " + current_admin.last_name
+    @admin = current_admin
+    @recent_event = @admin.recent_events.create(params[:recent_event])
     if @recent_event.save
       redirect_to recent_events_path
     else

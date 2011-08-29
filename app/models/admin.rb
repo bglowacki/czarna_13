@@ -1,4 +1,6 @@
 class Admin < ActiveRecord::Base
+  
+  has_many :recent_events
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable,  :recoverable, , :confirmable, :registerable
   devise :database_authenticatable, 

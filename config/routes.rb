@@ -29,8 +29,12 @@ Czarna13::Application.routes.draw do
   
   resources :scout_team_members
 
-  resources :recent_events
-
+  resources :admins do
+    resources :recent_events
+  end
+  
+  resources :recent_events, :only => [:index, :show]
+  
   resources :articles
 
 

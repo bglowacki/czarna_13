@@ -1,13 +1,13 @@
 =content_for :content do
 	-if admin_signed_in?
-		%p.right=link_to "Dodaj nowego newsa", new_recent_event_path(@admin)
+		%p.right=link_to "Dodaj nowego newsa", new_admin_recent_event_path(current_admin.id)
 	-if @recent_events
 		-@recent_events.each do |r|
 			%h2=r.title
-			-if r.admin_name.present?
-				%p
+			-if r.admin
+				%p 
 					="Autor: "
-					=r.admin_name
+					=r.admin.first_name + " " + r.admin.last_name
 			%br
 			%p=raw(truncate(r.description, :length => 200))
 			%p.right=link_to "...pokaż całego newsa", recent_event_path(r)

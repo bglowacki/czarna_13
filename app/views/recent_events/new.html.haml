@@ -2,7 +2,7 @@
 	Dodaj newsa
 
 =content_for :content do
-	=form_for @recent_event do |f|
+	=form_for [@admin, @recent_event] do |f|
 		=f.label :title, "Tytuł:"
 		%br=f.text_field :title
 	
