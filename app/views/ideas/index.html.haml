@@ -8,8 +8,9 @@
 
 	-@ideas.each do |i|
 		%h4=i.title
-		%br
 		%b="Dodane przez: #{i.added_by}"
 		%br
+		%br
 		%p=i.description
-		%p=link_to "Usuń", idea_path(i), :method => 'delete'
+		%p.right=link_to "Usuń", idea_path(i), :method => 'delete'
+		%hr
