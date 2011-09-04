@@ -5,10 +5,10 @@
 	-if admin_signed_in?
 		%p.right=link_to "Dodaj zdjęcie", new_gallery_gallery_image_path(@gallery)
 	-if @gallery.image.present?
-		=image_tag(@gallery.image_url(:thumb).to_s)
+		.image_wrapper_01=image_tag(@gallery.image_url(:thumb).to_s)
 	%h4=@gallery.description
 	-if @gallery.picassa_address.present?
-		%p=sanitize("Więcej zdjęć pod adresem #{link_to "Galeria " + @gallery.name, url_for(@gallery.picassa_address)}")
+		%p=sanitize("Więcej zdjęć pod adresem #{"Galeria " + @gallery.name + " " + @gallery.picassa_address}")
 	-@gallery.gallery_images.each do |gi|	
 		%p.image_wrapper_01
 			=link_to image_tag(gi.image_url(:thumb).to_s), gi.image_url
