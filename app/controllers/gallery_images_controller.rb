@@ -1,6 +1,7 @@
 class GalleryImagesController < ApplicationController
   
   before_filter :authenticate_admin!, :only => [:new, :destroy]
+  layout :resolve_layout
   
   def new
     @gallery = Gallery.find(params[:gallery_id])
@@ -28,5 +29,14 @@ class GalleryImagesController < ApplicationController
   def show
     @gallery_image = GalleryImage.find(params[:id])
   end
+  
+  def resolve_layout
+    if action_name == "show"
+      "gallery_image"
+    else
+      "application"
+    end
+  end
+  
   
 end
