@@ -1,7 +1,7 @@
 class GalleryImagesController < ApplicationController
   
   before_filter :authenticate_admin!, :only => [:new, :destroy]
-  layout "gallery_image", :except => [:show]
+  layout "gallery_image", :except => [:new]
   
   def new
     @gallery = Gallery.find(params[:gallery_id])
