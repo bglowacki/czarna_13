@@ -19,6 +19,16 @@ class RecentEventsController < ApplicationController
     @recent_event = RecentEvent.find(params[:id])
   end
   
+  def update
+    @recent_event = RecentEvent.find(params[:id])
+    if @recent_event.update_attributes(params[:recent_event])
+      redriect_to recent_events_path
+    else
+      render "edit"
+    end
+  end
+  
+  
   def create
     @admin = current_admin
     @recent_event = @admin.recent_events.create(params[:recent_event])
