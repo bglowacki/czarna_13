@@ -1,6 +1,10 @@
 =content_for :title do
 	=@recent_event.title
 =content_for :content do
-	%p.right=link_to "Powrót do strony głównej", root_path
+	%p.right
+		=link_to "Powrót do strony głównej", root_path
+		-if admin_signed_in?
+			|
+			=link_to "Edytuj", edit_admin_recent_event_path(@recent_event)
 	%br
 	%p=raw(@recent_event.description)

@@ -16,6 +16,7 @@ a:link, a:visited { color: #FFF; text-decoration: none; font-weight: normal; }
 a:active, a:hover { color: #99FF00; text-decoration: none; }
 
 .right {text-align: right;}
+.center {text-align: center;}
 
 p {
 	margin: 0px;
