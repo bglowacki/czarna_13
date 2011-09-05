@@ -16,13 +16,14 @@ class RecentEventsController < ApplicationController
   end
   
   def edit
-    @recent_event = RecentEvent.find(params[:id])
+    @admin = current_admin
+    @recent_event = @admin.recent_events.find(params[:id])
   end
   
   def update
     @recent_event = RecentEvent.find(params[:id])
     if @recent_event.update_attributes(params[:recent_event])
-      redriect_to recent_events_path
+      redirect_to admin_recent_events_path
     else
       render "edit"
     end
