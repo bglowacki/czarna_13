@@ -9,9 +9,16 @@
 	%h4=@gallery.description
 	-if @gallery.picassa_address.present?
 		%p=sanitize("Więcej zdjęć pod adresem #{"Galeria " + @gallery.name + " " + @gallery.picassa_address}")
+	%br
+	%br
+	%br
+	%br
+	%br
+	%br
+	%hr
 	-@gallery.gallery_images.each do |gi|	
 		%p.image_wrapper_01
-			=link_to (image_tag gi.image.url(:thumb)), gallery_image_path(gi)
+			=link_to (image_tag gi.image.url(:thumb)), gallery_gallery_image_path(@gallery, gi)
 			%br
 			-if admin_signed_in?
 				=link_to "Usuń", [@gallery, gi], :method => 'delete'

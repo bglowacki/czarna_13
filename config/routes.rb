@@ -23,7 +23,7 @@ Czarna13::Application.routes.draw do
     resources :article_sub_categories
   end
   
-  resources :gallery_images
+  #resources :gallery_images
 
   resources :calendar_events
   
