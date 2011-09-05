@@ -1,6 +1,7 @@
 class GalleryImagesController < ApplicationController
   
   before_filter :authenticate_admin!, :only => [:new, :destroy]
+  layout "gallery_image", :except => [:show]
   
   def new
     @gallery = Gallery.find(params[:gallery_id])
@@ -10,7 +11,7 @@ class GalleryImagesController < ApplicationController
   
   def create
      @gallery = Gallery.find(params[:gallery_id])
-     @gallery_image = @gallery.gallery_images.build
+     @gallery_image = @gallery.gallery_images.build(params[:gallery_image])
      if @gallery_image.save
        redirect_to gallery_path(@gallery)
      else
@@ -26,6 +27,7 @@ class GalleryImagesController < ApplicationController
   end
   
   def show
+    
     @gallery_image = GalleryImage.find(params[:id])
   end
   

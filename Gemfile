@@ -3,9 +3,10 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.3'
 gem 'haml'
 gem 'devise'
-gem 'carrierwave'
 gem 'rmagick'
 gem 'mysql2', '0.2.7'
+gem "paperclip", "~> 2.4"
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

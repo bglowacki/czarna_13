@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><html>
+<head>
+  <title>Czarna13</title>
+	<%=stylesheet_link_tag 'style', :media => 'all'%>  <%= javascript_include_tag :defaults %>
+  	<%= csrf_meta_tag %>
+	<%= init_tinymce_hammer_if_required %>
+	
+	
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-24913603-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	
+	
+</head>
+<body>
+	<div id="templatemo_wrapper_outer">
+	<div id="templatemo_wrapper_inner">
+	<%=link_to :root do%>
+		<div id="templatemo_banner"></div> 
+	<%end%>	
+	
+<%= yield :content%>
+
+<div id="templatemo_footer">
+        Copyright © 2011 <%=link_to "Czarna 13", root_path%>		
+   	</div> <!-- end of footer -->
+    <div class="margin_bottom_10"></div>
+    
+    <div class="content_section">
+    	<center>
+       
+		<div class="margin_bottom_10"></div>
+	</div>
+
+</body>
+</html>
