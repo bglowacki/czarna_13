@@ -11,5 +11,8 @@
 			%h2=g.name
 			%p=g.description
 		-if admin_signed_in?
-			%p.right=link_to "Usuń galerię", gallery_path(g), :method => "delete"
+			%p.right
+				=link_to "Edytuj", edit_gallery_path(g)
+				|
+				=link_to "Usuń", gallery_path(g), :method => "delete"
 		

@@ -8,7 +8,7 @@
 		.image_wrapper_01=image_tag @gallery.image.url(:medium)
 	%h4=@gallery.description
 	-if @gallery.picassa_address.present?
-		%p=sanitize("Więcej zdjęć pod adresem #{"Galeria " + @gallery.name + " " + @gallery.picassa_address}")
+		%p=sanitize("Więcej zdjęć pod adresem #{@gallery.picassa_address}")
 	%br
 	%br
 	%br
