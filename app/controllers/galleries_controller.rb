@@ -14,6 +14,19 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new
   end
   
+  def edit
+    @gallery = Gallery.find(params[:id])
+  end
+  
+  def update
+    @gallery = Gallery.find(params[:id])
+    if @gallery.update_attributes(params[:gallery])
+      redirect_to gallery_path(@gallery)
+    else
+      render "edit"
+    end
+  end
+  
   def create
     @gallery = Gallery.new(params[:gallery])
 
