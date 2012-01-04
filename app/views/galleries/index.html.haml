@@ -5,20 +5,14 @@
 	-if admin_signed_in?
 		%p.right=link_to "Dodaj galerię", new_gallery_path
 	-@galleries.each do |g|
-		%table
-			%tr
-				%td
-					=link_to gallery_path(g) do
-						-if g.image.present?
-							%p.image_wrapper_01=image_tag g.image.url(:medium)
-				%td
-					%h2=g.name
-					%p=g.description
-				
-			-if admin_signed_in?
-				%td
-					%p.right
-					=link_to "Edytuj", edit_gallery_path(g)
-					|
-					=link_to "Usuń", gallery_path(g), :method => "delete"
+		=link_to gallery_path(g) do
+			-if g.image.present?
+				%p.image_wrapper_01=image_tag g.image.url(:medium)
+			%h2=g.name
+			%p=g.description
+		-if admin_signed_in?
+			%p.right
+				=link_to "Edytuj", edit_gallery_path(g)
+				|
+				=link_to "Usuń", gallery_path(g), :method => "delete"
 		
