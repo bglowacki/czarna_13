@@ -24,6 +24,6 @@ production:
   encoding: utf8
   database: my_5830
   username: my_5830a
-  password: Bart1398#
+  password: 
   host: sql.verbum-rails.megiteam.pl
   port: 3307
