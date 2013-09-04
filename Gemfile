@@ -1,17 +1,26 @@
 source 'http://rubygems.org'
-
-gem 'rails', '3.0.3'
+ruby '2.0.0'
+#ruby-gemset=czarna_13
+gem 'rails', '3.1'
 gem 'haml'
 gem 'devise'
-gem 'rmagick'
+# gem 'rmagick'
 gem 'mysql2', '0.2.7'
 gem "paperclip", "~> 2.4"
 
 
+group :assets do
+  gem 'sass-rails', "~>3.1.0"
+  gem 'coffee-rails', "~>3.1.0"
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
