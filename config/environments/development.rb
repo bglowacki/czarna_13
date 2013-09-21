@@ -30,7 +30,8 @@ config.assets.compress = false
 
 # Expands the lines which load the assets
 config.assets.debug = true
-  
+config.active_record.mass_assignment_sanitizer = :strict
+config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
 Paperclip.options[:command_path] = "/usr/local/bin/"
 

@@ -1,40 +1,38 @@
 Czarna13::Application.routes.draw do
-  
+
   resources :ideas
-  
+
 
   devise_for :admins
-  
+
   devise_for :users
 
   resources :galleries do
     resources :gallery_images
   end
-  
+
   resources :article_sub_categories do
      resources :articles
   end
-  
+
   resources :scout_teams do
     resources :scout_team_members
   end
-   
+
   resources :article_categories do
     resources :article_sub_categories
   end
-  
-  #resources :gallery_images
 
   resources :calendar_events
-  
+
   resources :scout_team_members
 
   resources :admins do
     resources :recent_events
   end
-  
+
   resources :recent_events, :only => [:index, :show]
-  
+
   resources :articles
 
 

@@ -2,172 +2,172 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><html>
 <head>
   <title>Czarna13</title>
-	<%=stylesheet_link_tag 'application', :media => 'all'%>  <%= javascript_include_tag "application" %>
-  	<%= csrf_meta_tag %>
-	<%= init_tinymce_hammer_if_required %>
-	
-	
-	<script type="text/javascript">
+  <%=stylesheet_link_tag 'application', :media => 'all'%>  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+  <%= init_tinymce_hammer_if_required %>
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-24913603-1']);
-	  _gaq.push(['_trackPageview']);
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+  <script type="text/javascript">
 
-	</script>
-	
-	
+   var _gaq = _gaq || [];
+   _gaq.push(['_setAccount', 'UA-24913603-1']);
+   _gaq.push(['_trackPageview']);
+
+   (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
+
+ </script>
+
+
 </head>
 <body>
 	<div id="templatemo_wrapper_outer">
-	<div id="templatemo_wrapper_inner">
-	<%=link_to :root do%>
-		<div id="templatemo_banner"></div> 
-	<%end%>
-	<!-- end of banner -->
-	
-	
-	<div id="templatemo_menu">
-		
-		<ul><%if @scout_teams.present?%>
-				<%@scout_teams.each do |st|%>
-					<%if st.active == true%>
-						<li><%=link_to st.name, st%>
-					<%end%>
-				<%end%>  
-			<%end%>   
-        </ul>
-    </div> <!-- end of menu -->
+   <div id="templatemo_wrapper_inner">
+     <%=link_to :root do%>
+     <div id="templatemo_banner"></div>
+     <%end%>
+     <!-- end of banner -->
 
 
-	<div id="templatemo_content_wrapper">
-		<div id= "admin">
-			<div id="admin_panel" align="left">
-			</div>
-			<div id="login" align="right">
-				<%=render "/shared/admin_panel"%>
-			</div>
-		</div>
-    
-    	<div class="templatemo_side_bar margin_right_10">
-        	
-            
-			<div class="header_01">Menu</div>
-            	<ul>
-                	<li><%=link_to "Drużyny", scout_teams_path%></li>
-					<li><%=link_to "Galerie", galleries_path%>
-					<%if admin_signed_in?%>
-						<li><%=link_to "Pomysły (#{@ideas.count})", ideas_path%>
-					<%end%>
-                </ul>
-			
-            <div class="margin_bottom_20 horizontal_divider"></div> 
-			<div class="margin_bottom_20"></div>
+     <div id="templatemo_menu">
+      <ul>
+      <%if @scout_teams.present?%>
+        <%@scout_teams.each do |st|%>
+          <%if st.active == true%>
+            <li><%=link_to st.name, st%>
+          <%end%>
+        <%end%>
+      <%end%>
+      </ul>
+     </div> <!-- end of menu -->
 
-			
-			
-			<div class="header_01">Wiedza</div>
-			<%if admin_signed_in?%>
-				<p class=right> <%=link_to "Dodaj dział", new_article_category_path%>
-			<%end%>
-			<%if @article_categories%>
-				<%=render :template => 'article_categories/index'%>
-			<%end%>
-								
-            <div class="margin_bottom_20 horizontal_divider"></div> 
-			<div class="margin_bottom_20"></div>
+
+     <div id="templatemo_content_wrapper">
+      <div id= "admin">
+       <div id="admin_panel" align="left">
+       </div>
+       <div id="login" align="right">
+        <%=render "/shared/admin_panel"%>
+      </div>
+    </div>
+
+    <div class="templatemo_side_bar margin_right_10">
+
+
+     <div class="header_01">Menu</div>
+     <ul>
+       <li><%=link_to "Drużyny", scout_teams_path%></li>
+       <li><%=link_to "Galerie", galleries_path%>
+         <%if admin_signed_in?%>
+         <li><%=link_to "Pomysły (#{@ideas.count})", ideas_path%>
+           <%end%>
+         </ul>
+
+         <div class="margin_bottom_20 horizontal_divider"></div>
+         <div class="margin_bottom_20"></div>
+
+
+
+         <div class="header_01">Wiedza</div>
+         <%if admin_signed_in?%>
+         <p class=right> <%=link_to "Dodaj dział", new_article_category_path%>
+           <%end%>
+           <%if @article_categories%>
+           <%=render :template => 'article_categories/index'%>
+           <%end%>
+
+           <div class="margin_bottom_20 horizontal_divider"></div>
+           <div class="margin_bottom_20"></div>
 
             <!--
 
-			<div class="header_01">Search Any Game</div>     
+			<div class="header_01">Search Any Game</div>
             <form action="" method="post">
                   <input type="text" id="search_field" />
                   <input type="submit" value="" id="search_button" />
             </form>
             <div class="margin_bottom_20"></div>
 
-			-->
+          -->
 
         </div> <!-- end of left side bar -->
-        
+
         <div class="templatemo_content margin_right_10">
-        
+
         	<div class="content_section">
-           	  <div class="header_02"><%=yield :title%></div>
-              <!--<div class="image_wrapper_01"><img src="images/templatemo_image_01.jpg" alt="image" /></div>-->
-                <p><span><%=yield :content%></span></p>
-              <div class="margin_bottom_20"></div>                
-                <div class="cleaner"></div>
-            </div>
-            
-            
-            
-            
+            <div class="header_02"><%=yield :title%></div>
+            <!--<div class="image_wrapper_01"><img src="images/templatemo_image_01.jpg" alt="image" /></div>-->
+            <p><span><%=yield :content%></span></p>
+            <div class="margin_bottom_20"></div>
+            <div class="cleaner"></div>
+          </div>
+
+
+
+
         </div> <!-- end of content -->
 
 
 
-        
+
         <div class="templatemo_side_bar">
-	
-       		
-            <div class="header_01">Zbiórki:</div>
 
-			<%@scout_teams.each do |st|%>
-				<%if st.active == true%>
-					<h3><%=st.name%></h3>
-					<p>Dzień: <b><%=st.meeting_day%></b></p>
-					<%if st.meeting_time.present?%>
-						<p>Godzina: <b><%=st.meeting_time.to_formatted_s(:time_only)%></b></p>
-					<%end%>
-				<%end%>
-			<%end%>
-			
-			
-        <div class = "margin_bottom_20 horizontal_divider"></div>
-       <div class="margin_bottom_10"></div>
-		
-		
-			<p class="right">
-			<%if admin_signed_in?%>
-				<%=link_to "Nowe wydarzenie", new_calendar_event_path%>
-			<%end%>
-			</p>
-       		
-            <div class="header_01">Kalendarium</div>
-			<%if @all_calendar_events%>
-				<%=render :template => "/calendar_events/index"%>
-			<%end%>
-			
-			
-            
-       <div class="margin_bottom_10"></div>
-        </div> <!-- end of right side bar -->
-    	
-        <div class="cleaner"></div>    
-    </div> <!-- end of content wrapper -->
-    
+
+          <div class="header_01">Zbiórki:</div>
+
+          <%@scout_teams.each do |st|%>
+          <%if st.active == true%>
+          <h3><%=st.name%></h3>
+          <p>Dzień: <b><%=st.meeting_day%></b></p>
+          <%if st.meeting_time.present?%>
+          <p>Godzina: <b><%=st.meeting_time.to_formatted_s(:time_only)%></b></p>
+          <%end%>
+          <%end%>
+          <%end%>
+
+
+          <div class = "margin_bottom_20 horizontal_divider"></div>
+          <div class="margin_bottom_10"></div>
+
+
+          <p class="right">
+           <%if admin_signed_in?%>
+           <%=link_to "Nowe wydarzenie", new_calendar_event_path%>
+           <%end%>
+         </p>
+
+         <div class="header_01">Kalendarium</div>
+         <%if @all_calendar_events%>
+         <%=render :template => "/calendar_events/index"%>
+         <%end%>
+
+
+
+         <div class="margin_bottom_10"></div>
+       </div> <!-- end of right side bar -->
+
+       <div class="cleaner"></div>
+     </div> <!-- end of content wrapper -->
+
+   </div>
+ </div>
+
+
+ <%= yield %>
+
+ <div id="templatemo_footer">
+  Copyright © 2011 <%=link_to "Czarna 13", root_path%>
+</div> <!-- end of footer -->
+<div class="margin_bottom_10"></div>
+
+<div class="content_section">
+ <center>
+
+  <div class="margin_bottom_10"></div>
 </div>
-</div>
-	
-
-<%= yield %>
-
-<div id="templatemo_footer">
-        Copyright © 2011 <%=link_to "Czarna 13", root_path%>		
-   	</div> <!-- end of footer -->
-    <div class="margin_bottom_10"></div>
-    
-    <div class="content_section">
-    	<center>
-       
-		<div class="margin_bottom_10"></div>
-	</div>
 
 </body>
 </html>

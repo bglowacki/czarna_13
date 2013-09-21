@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 ruby '2.0.0'
 #ruby-gemset=czarna_13
-gem 'rails', '3.1'
+gem 'rails', '3.2'
 gem 'haml'
 gem 'devise'
 # gem 'rmagick'
@@ -10,9 +10,9 @@ gem "paperclip", "~> 2.4"
 
 
 group :assets do
-  gem 'sass-rails', "~>3.1.0"
-  gem 'coffee-rails', "~>3.1.0"
-  gem 'uglifier'
+  gem 'sass-rails', "~>3.2"
+  gem 'coffee-rails', "~>3.2"
+  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
