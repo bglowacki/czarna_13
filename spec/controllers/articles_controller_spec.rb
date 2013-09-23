@@ -55,4 +55,40 @@ describe ArticlesController do
     end
   end
 
+  describe "GET #edit" do
+    let(:admin) { create(:admin) }
+    let(:article_sub_category) {create(:article_sub_category)}
+    let(:article) {create(:article, article_sub_category_id:article_sub_category)}
+
+    before {sign_in admin}
+
+    it "finds the proper article" do
+      get :edit, id: article, article_sub_category_id: article_sub_category
+      expect(assigns(:article)).to eq(article)
+    end
+
+    it "finds the proper article_sub_category" do
+      get :edit, id: article, article_sub_category_id: article_sub_category
+      expect(assigns(:article_sub_category)).to eq(article_sub_category)
+    end
+  end
+
+  describe "POST #create" do
+    let(:admin) { create(:admin) }
+    let(:article_sub_category) {create(:article_sub_category)}
+    let(:article) {attributes_for(:article)}
+
+    before {sign_in admin}
+
+    it "should create new article" do
+      expect {post :create, article: article, article_sub_category_id: article_sub_category}.to change(Article, :count).by(1)
+    end
+
+    it "should render show" do
+      post :create, article: article, article_sub_category_id: article_sub_category
+      expect(response).to redirect_to article_path(assigns[:article])
+    end
+
+  end
+
 end
