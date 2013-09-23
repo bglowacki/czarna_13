@@ -7,13 +7,35 @@ gem 'devise'
 # gem 'rmagick'
 gem 'mysql2', '0.2.7'
 gem "paperclip", "~> 2.4"
+gem 'bootstrap-sass', '2.3.2.0'
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate', '0.0.9'
+
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
+  gem 'konacha'
+end
+
+group :test do
+  gem 'capybara', '2.1.0'
+  gem "selenium-webdriver"
+  gem 'factory_girl_rails', '4.2.1'
+  gem "launchy"
+  gem "database_cleaner"
+end
 
 
 group :assets do
-  gem 'sass-rails', "~>3.2"
-  gem 'coffee-rails', "~>3.2"
+  gem 'sass-rails', "~>3.2.3"
+  gem 'coffee-rails', "~>3.2.1"
   gem 'uglifier', '>= 1.0.3'
 end
+
+
 
 gem 'jquery-rails'
 
@@ -26,7 +48,7 @@ gem 'sqlite3', :require => 'sqlite3'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
