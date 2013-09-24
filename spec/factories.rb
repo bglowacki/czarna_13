@@ -3,6 +3,7 @@ FactoryGirl.define do
   factory :article_sub_category do
     name "Subcategory"
     body "Subcategory for the articles"
+    article_category_id :article_category
   end
 
   factory :article do

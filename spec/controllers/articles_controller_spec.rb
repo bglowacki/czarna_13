@@ -91,4 +91,60 @@ describe ArticlesController do
 
   end
 
+  describe "POST #update" do
+    let(:article_sub_category) {create(:article_sub_category)}
+    let(:article) {create(:article, article_sub_category_id: article_sub_category)}
+
+    context "with valid attributes" do
+      it "should locate proper article" do
+        post :update, id: article, article_sub_category_id: article_sub_category, article: attributes_for(:article)
+        expect(assigns(:article)).to eq(article)
+      end
+
+      it "should update article's attributes" do
+        post :update, id: article, article_sub_category_id: article_sub_category, article: attributes_for(:article, title: "Best article")
+        article.reload
+        expect(article.title).to eq("Best article")
+      end
+
+      it "redirects to updated article" do
+        post :update, id: article, article_sub_category_id: article_sub_category, article: attributes_for(:article)
+        expect(response).to redirect_to article_category_path(article_sub_category.article_category_id)
+      end
+    end
+
+    context "with invalid attributes" do
+      it "does not change article's attributes" do
+        post :update, id: article, article_sub_category_id:article_sub_category, article: attributes_for(:article, title: nil, author: "Janek")
+        article.reload
+        expect(article.title).to eq("New article")
+        expect(article.author).to_not eq("Janek")
+      end
+
+      it "renders edit template" do
+        post :update, id: article, article_sub_category_id:article_sub_category, article: attributes_for(:article, title: nil, author: "Janek")
+        expect(response).to render_template :edit
+      end
+    end
+
+    describe "POST #destroy" do
+      before(:each) do
+        admin = create(:admin)
+        article_sub_category = create(:article_sub_category)
+        article = create(:article, article_sub_category_id: article_sub_category)
+        sign_in admin
+      end
+
+      it "removes the article" do
+        article2 = create(:article, article_sub_category_id: article_sub_category)
+        expect {delete :destroy, id: article2, article_sub_category_id: article_sub_category}.to change(Article, :count).by(-1)
+      end
+
+      it "redirects to articlces path" do
+        delete :destroy, id: article, article_sub_category_id: article_sub_category
+        expect(response).to redirect_to article_category_path(article.article_sub_category.article_category_id)
+      end
+    end
+  end
+
 end
