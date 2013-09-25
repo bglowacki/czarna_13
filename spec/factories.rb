@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :article_category do
+    name "Article Category"
+    description "This is the category"
+    image "/image/string/"
+  end
 
   factory :article_sub_category do
     name "Subcategory"
@@ -16,8 +21,15 @@ FactoryGirl.define do
   factory :admin do
     first_name "Bartek"
     last_name "Glowacki"
-    email "example@user.com"
+    sequence(:email) {|n| "example#{n}@user.com"}
     password "xxxxxx"
     password_confirmation "xxxxxx"
+  end
+
+  factory :calendar_event do
+    title "New Event"
+    from Date.today
+    to Date.today + 1.weeks
+    note "Event will be held there"
   end
 end
