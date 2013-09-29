@@ -12,13 +12,6 @@ describe CalendarEventsController do
     end
   end
 
-  # describe "GET #show" do
-  #   it "should find proper calendar_event" do
-  #     get :show, id: calendar_event
-  #     expect(assigns(:calendar_event)).to eq(calendar_event)
-  #   end
-  # end
-
   context "when logged in" do
 
     before {sign_in admin}

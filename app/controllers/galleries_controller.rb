@@ -1,23 +1,23 @@
 class GalleriesController < ApplicationController
-  
-  before_filter :authenticate_admin!, :only => [:new, :destroy]
-  
+
+  before_filter :authenticate_admin!, :only => [:new, :destroy, :edit]
+
   def show
-    @gallery = Gallery.find(params[:id])    
+    @gallery = Gallery.find(params[:id])
   end
-  
+
   def index
     @galleries = Gallery.all
   end
-  
+
   def new
     @gallery = Gallery.new
   end
-  
+
   def edit
     @gallery = Gallery.find(params[:id])
   end
-  
+
   def update
     @gallery = Gallery.find(params[:id])
     if @gallery.update_attributes(params[:gallery])
@@ -26,7 +26,7 @@ class GalleriesController < ApplicationController
       render "edit"
     end
   end
-  
+
   def create
     @gallery = Gallery.new(params[:gallery])
 
@@ -36,10 +36,10 @@ class GalleriesController < ApplicationController
       render "new"
     end
   end
-  
+
   def destroy
     Gallery.find(params[:id]).destroy
     redirect_to galleries_path
   end
-  
+
 end

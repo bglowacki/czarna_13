@@ -20,7 +20,6 @@ class GalleryImagesController < ApplicationController
    end
   
   def destroy
-    @gallery = GalleryImage.find(params[:id])
     @gallery_image = GalleryImage.find(params[:id])
     @gallery_image.destroy
     redirect_to gallery_path(@gallery.gallery_id)

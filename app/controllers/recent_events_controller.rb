@@ -15,6 +15,16 @@ class RecentEventsController < ApplicationController
     @recent_event = @admin.recent_events.build
   end
 
+  def create
+    @admin = current_admin
+    @recent_event = @admin.recent_events.create(params[:recent_event])
+    if @recent_event.save
+      redirect_to recent_events_path
+    else
+      render "new"
+    end
+  end
+
   def edit
     @admin = current_admin
     @recent_event = @admin.recent_events.find(params[:id])
@@ -28,16 +38,4 @@ class RecentEventsController < ApplicationController
       render "edit"
     end
   end
-
-
-  def create
-    @admin = current_admin
-    @recent_event = @admin.recent_events.create(params[:recent_event])
-    if @recent_event.save
-      redirect_to recent_events_path
-    else
-      render "new"
-    end
-  end
-
 end
