@@ -70,6 +70,31 @@ describe RecentEventsController do
         expect(response).to render_template(:edit)
       end
     end
+
+    describe "POST #create" do
+      it "should create new recent_event" do
+        expect {post :create, admin_id: admin, recent_event: attributes_for(:recent_event, admin_id: admin)}.to change(RecentEvent, :count).by(1)
+      end
+
+      it "should redirect to recent_events" do
+        post :create, admin_id: admin, recent_event: attributes_for(:recent_event, admin_id: admin)
+        expect(response).to redirect_to recent_events_path
+      end
+    end
+
+
+    describe "POST #update" do
+      it "should update recent_event" do
+        post :update, admin_id: admin, id: recent_event, recent_event: attributes_for(:recent_event, title: "Changed recent event")
+        recent_event.reload
+        expect(recent_event.title).to eq("Changed recent event")
+      end
+
+      it "should redirect to recent_events" do
+        post :update, admin_id: admin, recent_event: attributes_for(:recent_event, admin_id: admin)
+        expect(response).to redirect_to recent_events_path
+      end
+    end
   end
 
 end

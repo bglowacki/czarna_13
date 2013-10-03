@@ -18,6 +18,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
   gem 'konacha'
+  gem 'guard-spork'
 end
 
 group :test do

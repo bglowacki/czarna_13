@@ -10,7 +10,7 @@ class RecentEventsController < ApplicationController
     @recent_event = RecentEvent.find(params[:id])
   end
 
-  def new
+  def new 
     @admin = current_admin
     @recent_event = @admin.recent_events.build
   end
