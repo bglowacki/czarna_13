@@ -1,12 +1,15 @@
 source 'http://rubygems.org'
 ruby '1.9.3'
-gem 'rails', '3.2.18'
+gem 'rails', '~> 4.1'
 gem 'haml'
 gem 'devise'
-gem "paperclip", "~> 2.4"
-gem 'bootstrap-sass', '2.3.2.0'
-gem 'will_paginate', '~> 3.0'
-gem 'bootstrap-will_paginate', '0.0.9'
+gem "paperclip"
+gem 'bootstrap-sass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 
 group :development, :test do
@@ -27,11 +30,7 @@ group :test do
 end
 
 
-group :assets do
-  gem 'sass-rails', "~>3.2.6"
-  gem 'coffee-rails', "~>3.2.2"
-  gem 'uglifier', '>= 1.0.3'
-end
+
 
 
 
