@@ -1,11 +1,8 @@
 source 'http://rubygems.org'
-ruby '2.0.0'
-#ruby-gemset=czarna_13
-gem 'rails', '3.2'
+ruby '1.9.3'
+gem 'rails', '3.2.18'
 gem 'haml'
 gem 'devise'
-# gem 'rmagick'
-gem 'mysql2', '0.2.7'
 gem "paperclip", "~> 2.4"
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'will_paginate', '~> 3.0'
@@ -31,8 +28,8 @@ end
 
 
 group :assets do
-  gem 'sass-rails', "~>3.2.3"
-  gem 'coffee-rails', "~>3.2.1"
+  gem 'sass-rails', "~>3.2.6"
+  gem 'coffee-rails', "~>3.2.2"
   gem 'uglifier', '>= 1.0.3'
 end
 
